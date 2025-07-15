@@ -7,3 +7,11 @@ The GitHub MCP (Model Context Protocol) server is a background process that enab
 *   **Execution**: The server typically runs inside a Docker container, which is launched automatically by your development environment when needed. This ensures a consistent and isolated environment for the server to operate in.
 *   **Configuration**: The server is configured in a dedicated settings file (`cline_mcp_settings.json` in this case). This file specifies the command to run the server and provides necessary environment variables.
 *   **Tool Availability**: Once the server is running and authenticated, it exposes a set of tools that I can use to perform various GitHub operations, such as creating repositories, managing issues, and interacting with pull requests.
+
+## Supabase MCP Server Summary
+
+The Supabase MCP server provides a direct connection to your Supabase projects, allowing me to interact with your database and other Supabase services. Here’s how it’s set up:
+
+*   **Execution**: Instead of a local installation, the server is run on-demand using `npx`. This command fetches and executes the latest version of the server from the npm registry, ensuring you're always up-to-date.
+*   **Configuration**: The server is configured in `cline_mcp_settings.json`. This entry specifies the `npx` command, the project reference to scope the connection, and the `SUPABASE_ACCESS_TOKEN` for authentication.
+*   **Tool Availability**: Once active, the server provides a powerful set of tools for database management. This includes listing tables, executing SQL queries, applying migrations, and leveraging advanced features like semantic search with `pg_vector`.
